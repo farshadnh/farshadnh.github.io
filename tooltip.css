@@ -5,28 +5,16 @@ a.tooltip_link{
 .tooltip{
 	display: none;
 	position: absolute !important;
-	width: 200px;
-	background: rgba(61, 102, 143, 0.9);
-	padding: 5px;
-	margin: 0 0 12px 0;
-	color: #fff;
+	width: 500px;
+	background: rgba(211, 211, 211, 0.9);
+	padding: 10px;
+	margin: auto;
 	z-index: 100;
-	bottom: 100%;
-	text-align: center;	
+	text-align: center;
+	align: center;
+	
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 8px;
+	
 }
-
-.tooltip:after{
-	center: "";
-	position: absolute;
-	bottom: -14px;
-	z-index: 100;
-	width: 100%
-}
-
-.tooltip:before{
-	center: "";
-	position: absolute;
-	bottom: -14px;
-	z-index: 100;
-}
-
