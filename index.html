@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My CV Page</title>
+  <title>Farshad N. Heravi</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
@@ -14,29 +14,49 @@
   <link rel="stylesheet" href="app.css">
   <link rel="stylesheet" href="tooltip.css">
   <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src="lib/html5-boilerplate/dist/js/vendor/jquery-3.1.0.min.js"></script>
+  
   
   <script>
-	$("a").mouseover(function(e){
-		var $class_name = $(this).attr("class").slice(13);
-		var $x = e.PageX - this.offsetLeft;
-		var $tooltip_text = $(this).attr("title");
-		
-		if($tooltip_text.length > 0){
-			$(this).append('<div class="tooltip ' + $class_name + '" >'+$tooltip_text+'</div>');
+	jQuery(function() {
+		$("#master_thesis_info").mouseenter(function(e){
+			var $x = e.pageX - this.offsetLeft;
+			var $y = e.pageY;
 			
-			$("a > div.tooltip.center").css("left", "" + $x - 103 + "px");
-			$("a > div.tooltip." + $class_name).fadeIn(300);
-		}
+			$("#master_thesis_tooltip").css("display", "block");
+			$("#master_thesis_tooltip").css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 4) + $(window).scrollTop()) + "px");
+			$("#master_thesis_tooltip").css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+		});
+		$("#master_thesis_info").mouseleave(function(e){
+			$("#master_thesis_tooltip").css("display", "none");
+		});
+		
+		$("#bachelor_thesis_info").mouseenter(function(e){
+			var $x = e.pageX - this.offsetLeft;
+			var $y = e.pageY;
+			
+			$("#bachelor_thesis_tooltip").css("display", "block");
+			$("#bachelor_thesis_tooltip").css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 4) + $(window).scrollTop()) + "px");
+			$("#bachelor_thesis_tooltip").css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+		});
+		$("#bachelor_thesis_info").mouseleave(function(e){
+			$("#bachelor_thesis_tooltip").css("display", "none");
+		});
 	});
   </script>
   
 </head>
 <body>
+<!-- tooltips -->
+<div class="tooltip" id="master_thesis_tooltip" width="400px" style="text-align: justify">In my master thesis, I have assessed the piezoelectric behavior of boron nitride nanotubes using both molecular mechanics and finite element method. The results of this research is under preparation to be published on an international journal. The following figures show one of the examined structures as well as some results.<br/><img src="master_thesis_tooltip_pic1.PNG" width="40%"/><img src="master_thesis_tooltip_pic2.PNG" width="60%"/></div>
+<div class="tooltip" id="bachelor_thesis_tooltip" width="400px" style="text-align: justify">Having enough experience in modeling different vibration systems, I chose a numerical project as my final bachelor project which I managed to grade 4/4. In this project, a uniform beam underlying a moving mass, which could be a representative of train or car bridges, has modeled using two different numerical approches, namely Spectral Element Method (SEM) and Finite Element Method (FEM). The obtained results have qualified using analytical solutions for a simple beam. figures below show an schematics of a beam under moving force and its corresponding natural frequencies.<br/><img src="bachelor_thesis_tooltip_pic1.PNG" width="40%"/><img src="bachelor_thesis_tooltip_pic2.PNG" width="60%"/></div>
+
+
+<!-- end of tooltips -->
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-
+  
   <div ng-view>
   </div>
   <div id="main">
@@ -64,7 +84,7 @@
             <td class="contact_info">(+98) 935 515 0685 </td>
           </tr>
           <tr>
-            <td><a href="#">Linkedin</a> / <a href="#">Skype</a> / <a href="http://nvac.ut.ac.ir/">NVAC</a></td>
+            <td><a href="#" id="linkedin_link">Linkedin</a> / <a href="#">Skype</a> / <a href="http://nvac.ut.ac.ir/">NVAC</a></td>
           </tr>
         </table>
       </div>
@@ -110,11 +130,11 @@
             <div class="p_info">
               <p class="edu_p1">M.Sc. in Mechanical Engineering, Applied Design subdiscipline</p>
               <p class="edu_p2">University of Tehran</p>
-              <p class="edu_p3 tooltip_link" >Thesis: An Assessment of the Piezoelectric Effect of BN Nanotubes using AFEM method</p>
+              <p class="edu_p3">Thesis: An Assessment of the Piezoelectric Effect of BN Nanotubes using AFEM method   <img src="info-icon.png" width="15px" id="master_thesis_info"></p>
               <p class="edu_p4">Overall GPA: 16.62 / 20 (3.65 / 4)<br>Last year GPA: 17.40 / 20 (4 / 4)</p>
             </div>
           </div>
-<div class="tooltip [left, center, or right]">some text </div>
+
           <div class="empty_div"></div>
 
           <div class="div1">
@@ -123,7 +143,7 @@
             <div class="p_info">
               <p class="edu_p1">B.Sc. in Mechanical Engineering</p>
               <p class="edu_p2">University of Tabriz</p>
-              <p class="edu_p3">Final project: Simulation of Beam Vibration Under Moving Forces using FEM and SEM methods</p>
+              <p class="edu_p3">Final project: Simulation of Beam Vibration Under Moving Forces using FEM and SEM methods   <img src="info-icon.png" width="15px" id="bachelor_thesis_info"></p>
               <p class="edu_p4">Overall GPA: 15.86 / 20 (3.22 / 4)</p>
             </div>
           </div>
@@ -336,7 +356,7 @@
             <p class="p_date">2017</p>
             <div class="vertical_line"></div>
             <div class="p_info">
-              <p class="edu_p1 work_p1">Identification of a rotary system parameters using modal analysis methods</p>
+              <p class="edu_p1 work_p1">Identification of parameters of a rotary system using modal analysis methods</p>
             </div>
           </div>
           <div class="empty_div"></div>
