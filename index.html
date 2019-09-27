@@ -12,13 +12,25 @@
   <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="tooltip.css">
   <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  
   <script>
-	$(document).ready(function(){
-		$("#content").html("master_thesis");
-		$("#content #master_thesis").tooltip({content: '<p>text</p>'});
+	$("a").mouseover(function(e){
+		var $class_name = $(this).attr("class").slice(13);
+		var $x = e.PageX - this.offsetLeft;
+		var $tooltip_text = $(this).attr("title");
+		
+		if($tooltip_text.length > 0){
+			$(this).append('<div class="tooltip ' + $class_name + '" >'+$tooltip_text+'</div>');
+			
+			$("a > div.tooltip.center").css("left", "" + $x - 103 + "px");
+			$("a > div.tooltip." + $class_name).fadeIn(300);
+		}
 	});
   </script>
+  
 </head>
 <body>
   <!--[if lt IE 7]>
@@ -98,11 +110,11 @@
             <div class="p_info">
               <p class="edu_p1">M.Sc. in Mechanical Engineering, Applied Design subdiscipline</p>
               <p class="edu_p2">University of Tehran</p>
-              <p class="edu_p3" id="master_thesis">Thesis: An Assessment of the Piezoelectric Effect of BN Nanotubes using AFEM method</p>
+              <p class="edu_p3 tooltip_link" >Thesis: An Assessment of the Piezoelectric Effect of BN Nanotubes using AFEM method</p>
               <p class="edu_p4">Overall GPA: 16.62 / 20 (3.65 / 4)<br>Last year GPA: 17.40 / 20 (4 / 4)</p>
             </div>
           </div>
-
+<div class="tooltip [left, center, or right]">some text </div>
           <div class="empty_div"></div>
 
           <div class="div1">
