@@ -15,8 +15,25 @@
   <link rel="stylesheet" href="tooltip.css">
   <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <script src="lib/html5-boilerplate/dist/js/vendor/jquery-3.1.0.min.js"></script>
-  
-  
+  <script>
+	$(document).ready(function(){
+		var mybutton = document.getElementById("myBtn");
+		window.onscroll = function() {scrollFunction()};
+		function scrollFunction() {
+		  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+
+			mybutton.style.display = "block";
+		  } else {
+			mybutton.style.display = "none";
+		  }
+		}
+	});
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+	  document.body.scrollTop = 0; // For Safari
+	  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+	}
+  </script>
   <script>
 	jQuery(function() {
 		$("#master_thesis_info").mouseenter(function(e){
@@ -65,6 +82,16 @@
 		$("#projects3_info").mouseleave(function(e){
 			$("#project3_tooltip").css("display", "none");
 		});
+		
+		$("#projects4_info").mouseenter(function(e){
+			$("#project4_tooltip").css("display", "block");
+			$("#project4_tooltip").css("width", $(window).width()*0.4 + "px");
+			$("#project4_tooltip").css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 4) + $(window).scrollTop()) + "px");
+			$("#project4_tooltip").css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+		});
+		$("#projects4_info").mouseleave(function(e){
+			$("#project4_tooltip").css("display", "none");
+		});
 	});
   </script>
   
@@ -76,15 +103,14 @@
 <div class="tooltip" id="project1_tooltip" width="400px" style="text-align: justify">In this project, in order to optimize the performance of a water distribution network in terms of PAT models and working speeds of PATs in hourly variable water demand, I have modeled the very network using both empirical and analytical equations. Then, armed with a model of the network, I used two nested PSO algorithm to optimize model and working speed of PATs in different hours of a day. Hereby, you can see some of the obtained results in this project.<br/><div class="tooltip_img_container"><img src="projects1_tooltip_pic1.PNG" width="38%"/><img src="projects1_tooltip_pic2.PNG" width="58%"/></div></div>
 <div class="tooltip" id="project2_tooltip" width="400px" style="text-align: justify">Optimizing thermodynamical systems to properly save previously wasted energy has taken a great amount of attention since last decade. In this research, we have obtained mathematical equations which express energetic and exergetic efficiencies in terms of evaporator and generator temperatures for any reasonable working conditions, that is ambient, absorber, and condenser temperatures as well as effectiveness of heat exchanger. Having modeled an absorption cooling system (ACS) in MATLAB, I managed to use Genetic Algorithm to find the optimum evaporator and generator temperatures. Repeating the very optimization process, I have gathered a dataset of different working conditions and their optimum parameters. Using Group Method of Data Handling (GMDH) I have conducted a regression on available data and obtain mathematical equations which can be used in the process of designing ACSs. In the regression process, various structures have been considered for training the model with different activation function and hidden layer count. The first figure shows the schematics of ACS. The second one shows the structure of trained GMDH neural network, and the third one shows the result of sensitivity analysis on the model.<br/><div class="tooltip_img_container"><img src="projects2_tooltip_pic1.PNG" width="30%"/><img src="projects2_tooltip_pic2.PNG" width="30%"/><img src="projects2_tooltip_pic3.PNG" width="30%"/></div></div>
 <div class="tooltip" id="project3_tooltip" width="400px" style="text-align: justify">Harnessing the solar rays shining on residential building makes us capable of controlling the environment temperature in both cold and hot seasons. In this project, I, as a member of a 2-student team, have modeled a solar shutter that would be installed in front of windows in buildings as shown in figures below. Using geometrical principals and MATLAB software, I managed to obtained the optimal curve for the shutter which can most efficiently reflect the solar beams on a central tube filled with special phase changing material. After the optimum design had obtained and CAD model had been designed in Solidworks software, I analyzed the thermal performance of the shutter using ANSYS. Below, you can see some of the outputs for this project.<br/><div class="tooltip_img_container"><img src="projects3_tooltip_pic1.PNG" width="24%"/><img src="projects3_tooltip_pic2.PNG" width="24%"/><img src="projects3_tooltip_pic3.PNG" width="24%"/><img src="projects3_tooltip_pic4.PNG" width="24%"/></div></div>
+<div class="tooltip" id="project4_tooltip" width="400px" style="text-align: justify">In this experimental project, which was Smart Material's course, using a fuzzy neural network, I have conducted some experiences to identify and model the SMA wires. Then, I have used this wire to control the angle of a morphing-wing mechanism shown in figure below. During this project, I learned to use Simulink to model SMA wires theorically. In addition, I learned to model the system in LabView environment to test my controller on the mechanism in the real time using a DAQ hardware.<br/><div class="tooltip_img_container"><img src="projects4_tooltip_pic1.PNG" width="24%"/><img src="projects4_tooltip_pic2.PNG" width="24%"/><img src="projects4_tooltip_pic3.PNG" width="24%"/><img src="projects4_tooltip_pic4.PNG" width="24%"/></div></div>
 
-
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <!-- end of tooltips -->
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
   
-  <div ng-view>
-  </div>
   <div id="main">
     <div id="part1">
       <div id="profile_picture" > <img src="pic1.jpg"> </div>
@@ -210,6 +236,15 @@
 				<p class="edu_p2 work_p2">under review</p>
 			</div>
 		</div>
+		  <div class="empty_div"></div>
+		  <div class="div1">
+            <p class="p_date">2018</p>
+            <div class="vertical_line"></div>
+            <div class="p_info">
+              <p class="edu_p1 work_p1">Hysteresis modeling for a Shape Memory alloy Actuator using Adaptive Neuro-Fuzzy Inference System</p>
+              <p class="edu_p2 work_p2">Conference Paper</p>
+            </div>
+          </div>
           <div class="empty_div"></div>
           <div class="div1">
             <p class="p_date">2017</p>
@@ -394,7 +429,7 @@
             <p class="p_date">2017</p>
             <div class="vertical_line"></div>
             <div class="p_info">
-              <p class="edu_p1 work_p1">Identification, design, and implementation of an Adaptive-Neuro fuzzy controller on an SMA-actuated Morphing-wing mechanism</p>
+              <p class="edu_p1 work_p1">Identification, design, and implementation of an Adaptive-Neuro fuzzy controller on an SMA-actuated Morphing-wing mechanism   <img src="info-icon.png" width="15px" id="projects4_info"></p>
             </div>
           </div>
           <div class="empty_div"></div>
@@ -678,3 +713,5 @@
 
 </body>
 </html>
+
+
