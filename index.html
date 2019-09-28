@@ -20,9 +20,6 @@
   <script>
 	jQuery(function() {
 		$("#master_thesis_info").mouseenter(function(e){
-			var $x = e.pageX - this.offsetLeft;
-			var $y = e.pageY;
-			
 			$("#master_thesis_tooltip").css("display", "block");
 			$("#master_thesis_tooltip").css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 4) + $(window).scrollTop()) + "px");
 			$("#master_thesis_tooltip").css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
@@ -32,9 +29,6 @@
 		});
 		
 		$("#bachelor_thesis_info").mouseenter(function(e){
-			var $x = e.pageX - this.offsetLeft;
-			var $y = e.pageY;
-			
 			$("#bachelor_thesis_tooltip").css("display", "block");
 			$("#bachelor_thesis_tooltip").css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 4) + $(window).scrollTop()) + "px");
 			$("#bachelor_thesis_tooltip").css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
@@ -42,14 +36,46 @@
 		$("#bachelor_thesis_info").mouseleave(function(e){
 			$("#bachelor_thesis_tooltip").css("display", "none");
 		});
+		
+		$("#projects1_info").mouseenter(function(e){
+			$("#project1_tooltip").css("display", "block");
+			$("#project1_tooltip").css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 4) + $(window).scrollTop()) + "px");
+			$("#project1_tooltip").css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+		});
+		$("#projects1_info").mouseleave(function(e){
+			$("#project1_tooltip").css("display", "none");
+		});
+		
+		$("#projects2_info").mouseenter(function(e){
+			$("#project2_tooltip").css("display", "block");
+			$("#project2_tooltip").css("width", $(window).width()*0.5 + "px");
+			$("#project2_tooltip").css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 20) + $(window).scrollTop()) + "px");
+			$("#project2_tooltip").css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 10) + $(window).scrollLeft()) + "px");
+		});
+		$("#projects2_info").mouseleave(function(e){
+			$("#project2_tooltip").css("display", "none");
+		});
+		
+		$("#projects3_info").mouseenter(function(e){
+			$("#project3_tooltip").css("display", "block");
+			$("#project3_tooltip").css("width", $(window).width()*0.5 + "px");
+			$("#project3_tooltip").css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 20) + $(window).scrollTop()) + "px");
+			$("#project3_tooltip").css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 10) + $(window).scrollLeft()) + "px");
+		});
+		$("#projects3_info").mouseleave(function(e){
+			$("#project3_tooltip").css("display", "none");
+		});
 	});
   </script>
   
 </head>
 <body>
 <!-- tooltips -->
-<div class="tooltip" id="master_thesis_tooltip" width="400px" style="text-align: justify">In my master thesis, I have assessed the piezoelectric behavior of boron nitride nanotubes using both molecular mechanics and finite element method. A set of different nanotubes in terms of diameter, length, and chiral angle has selected for simulations. The results of this research is under preparation to be published on an international journal. The following figures show one of the examined structures as well as some results.<br/><img src="master_thesis_tooltip_pic1.PNG" width="40%"/><img src="master_thesis_tooltip_pic2.PNG" width="60%"/></div>
-<div class="tooltip" id="bachelor_thesis_tooltip" width="400px" style="text-align: justify">Having enough experience in modeling different vibration systems, I chose a numerical project as my final bachelor project which I managed to grade 4/4. In this project, a uniform beam underlying a moving mass, which could be a representative of train or car bridges, has modeled using two different numerical approches, namely Spectral Element Method (SEM) and Finite Element Method (FEM). The obtained results have qualified using analytical solution for a simple beam. figures below show an schematic diagram of a beam under moving force and its corresponding natural frequencies. The research culminated in publishing a conference paper in 2017.<br/><img src="bachelor_thesis_tooltip_pic1.PNG" width="40%"/><img src="bachelor_thesis_tooltip_pic2.PNG" width="60%"/></div>
+<div class="tooltip" id="master_thesis_tooltip" width="400px" style="text-align: justify">In my master thesis, I have assessed the piezoelectric behavior of boron nitride nanotubes using both molecular mechanics and finite element method. A set of different nanotubes in terms of diameter, length, and chiral angle has selected for simulations. The results of this research is under preparation to be published on an international journal. The following figures show one of the examined structures as well as some results.<br/><div class="tooltip_img_container"><img src="master_thesis_tooltip_pic1.PNG" width="38%"/><img src="master_thesis_tooltip_pic2.PNG" width="54%"/></div></div>
+<div class="tooltip" id="bachelor_thesis_tooltip" width="400px" style="text-align: justify">Having enough experience in modeling different vibration systems, I chose a numerical project as my final bachelor project which I managed to grade 4/4. In this project, a uniform beam underlying a moving mass, which could be a representative of train or car bridges, has modeled using two different numerical approches, namely Spectral Element Method (SEM) and Finite Element Method (FEM). The obtained results have qualified using analytical solution for a simple beam. figures below show an schematic diagram of a beam under moving force and its corresponding natural frequencies. The research culminated in publishing a conference paper in 2017.<br/><div class="tooltip_img_container"><img src="bachelor_thesis_tooltip_pic1.PNG" width="38%"/><img src="bachelor_thesis_tooltip_pic2.PNG" width="58%"/></div></div>
+<div class="tooltip" id="project1_tooltip" width="400px" style="text-align: justify">In this project, in order to optimize the performance of a water distribution network in terms of PAT models and working speeds of PATs in hourly variable water demand, I have modeled the very network using both empirical and analytical equations. Then, armed with a model of the network, I used two nested PSO algorithm to optimize model and working speed of PATs in different hours of a day. Hereby, you can see some of the obtained results in this project.<br/><div class="tooltip_img_container"><img src="projects1_tooltip_pic1.PNG" width="38%"/><img src="projects1_tooltip_pic2.PNG" width="58%"/></div></div>
+<div class="tooltip" id="project2_tooltip" width="400px" style="text-align: justify">Optimizing thermodynamical systems to properly save previously wasted energy has taken a great amount of attention since last decade. In this research, we have obtained mathematical equations which express energetic and exergetic efficiencies in terms of evaporator and generator temperatures for any reasonable working conditions, that is ambient, absorber, and condenser temperatures as well as effectiveness of heat exchanger. Having modeled an absorption cooling system (ACS) in MATLAB, I managed to use Genetic Algorithm to find the optimum evaporator and generator temperatures. Repeating the very optimization process, I have gathered a dataset of different working conditions and their optimum parameters. Using Group Method of Data Handling (GMDH) I have conducted a regression on available data and obtain mathematical equations which can be used in the process of designing ACSs. In the regression process, various structures have been considered for training the model with different activation function and hidden layer count. The first figure shows the schematics of ACS. The second one shows the structure of trained GMDH neural network, and the third one shows the result of sensitivity analysis on the model.<br/><div class="tooltip_img_container"><img src="projects2_tooltip_pic1.PNG" width="30%"/><img src="projects2_tooltip_pic2.PNG" width="30%"/><img src="projects2_tooltip_pic3.PNG" width="30%"/></div></div>
+<div class="tooltip" id="project3_tooltip" width="400px" style="text-align: justify">Harnessing the solar rays shining on residential building makes us capable of controlling the environment temperature in both cold and hot seasons. In this project, I, as a member of a 2-student team, have modeled a solar shutter that would be installed in front of windows in buildings as shown in figures below. Using geometrical principals and MATLAB software, I managed to obtained the optimal curve for the shutter which can most efficiently reflect the solar beams on a central tube filled with special phase changing material. After the optimum design had obtained and CAD model had been designed in Solidworks software, I analyzed the thermal performance of the shutter using ANSYS. Below, you can see some of the outputs for this project.<br/><div class="tooltip_img_container"><img src="projects3_tooltip_pic1.PNG" width="24%"/><img src="projects3_tooltip_pic2.PNG" width="24%"/><img src="projects3_tooltip_pic3.PNG" width="24%"/><img src="projects3_tooltip_pic4.PNG" width="24%"/></div></div>
 
 
 <!-- end of tooltips -->
@@ -106,15 +132,15 @@
 
     <!-- About Me -->
     <div class="part with_bg_color">
-      <div class="part_container" style="flex-direction: row">
+      <div class="part_container" id="part2_container_id" style="flex-direction: row">
         <div id="part2_image_div">
           <p id="part2_about_me">About Me</p>
           <img src="pic2.jpg ">
         </div>
         <div id="part2_right_side">
-          <span class="bio">I am the member of Noise, Acoustics, and Vibration Research Center at University of Tehran. My master thesis in Mechanical engineering, Applied Design subdiscipline, is about modeling the piezoelectric behaviour of BN nanotubes using atomistic finite element method.</span>
+          <span class="bio"><br/><br/><br/>I am a member of Noise, Acoustics, and Vibrations Research Center at University of Tehran. I have participated in several robotics, control, and numerical simulations research projects during my B.Sc. and M.Sc. studies. In addition to my 14-year experience in computer programming using various programming languages, I have quite eye-catching prowesses in applying machine learning algorithms in different systems, developing problem-solving solutions, and designing highly detailed mechanical CAD designs. I am interested in robotics, AI, and control systems.</span>
           <span class="bio_bordered">Birth Date: May 30th, 1994<br>Birth place: Tabriz, Iran<br>Nationallity: Iranian</span>
-          <div id="dlCV"><a href="#"><p>My CV</p></a></div>
+          <!-- <div id="dlCV"><a href="#"><p>My CV</p></a></div> -->
         </div>
       </div>
     </div>
@@ -190,7 +216,7 @@
             <div class="vertical_line"></div>
             <div class="p_info">
               <p class="edu_p1 work_p1">Fractional-Order PID Control of a Solar Furnace</p>
-              <p class="edu_p2 work_p2">Conference Paper - in Persian</p>
+              <p class="edu_p2 work_p2">Conference Paper</p>
             </div>
           </div>
           <div class="empty_div"></div>
@@ -199,7 +225,7 @@
             <div class="vertical_line"></div>
             <div class="p_info">
               <p class="edu_p1 work_p1">Modeling and analysis of vibration of a beam subjected to a moving force using SEM method</p>
-              <p class="edu_p2 work_p2">Conference Paper - in Persian</p>
+              <p class="edu_p2 work_p2">Conference Paper</p>
             </div>
           </div>
           <div class="empty_div"></div>
@@ -336,22 +362,34 @@
       <div class="part_container">
         <div class="part_title" id="research">Research Projects</div>
         <div class="give_info">
+		  <!-- #1 -->
+          <div class="div1">
+            <p class="p_date">2019</p>
+            <div class="vertical_line"></div>
+            <div class="p_info">
+              <p class="edu_p1 work_p1">Optimizing the use of PATs in Water Distribution Networks (WDN)   <img src="info-icon.png" width="15px" id="projects1_info"></p>
+            </div>
+          </div>
+		  <div class="empty_div"></div>
+		  <!-- #2 -->
+		  <div class="div1">
+            <p class="p_date">2018</p>
+            <div class="vertical_line"></div>
+            <div class="p_info">
+              <p class="edu_p1 work_p1">Implementation of GMDH artificial neural network to analyze thermodynamic cycle data   <img src="info-icon.png" width="15px" id="projects2_info"></p>
+            </div>
+          </div>
+          <div class="empty_div"></div>
+		  <!-- #3 -->
           <div class="div1">
             <p class="p_date">2018</p>
             <div class="vertical_line"></div>
             <div class="p_info">
-              <p class="edu_p1 work_p1">Implementation of GMDH artificial neural network to analyze thermodynamic cycle data</p>
+              <p class="edu_p1 work_p1">Design and thermal analysis of a solar shutter   <img src="info-icon.png" width="15px" id="projects3_info"></p>
             </div>
           </div>
           <div class="empty_div"></div>
-          <div class="div1">
-            <p class="p_date">2018</p>
-            <div class="vertical_line"></div>
-            <div class="p_info">
-              <p class="edu_p1 work_p1">Design and thermal analysis of a solar shutter</p>
-            </div>
-          </div>
-          <div class="empty_div"></div>
+		  <!-- #4 -->
           <div class="div1">
             <p class="p_date">2017</p>
             <div class="vertical_line"></div>
@@ -360,6 +398,7 @@
             </div>
           </div>
           <div class="empty_div"></div>
+		  <!-- #5 -->
           <div class="div1">
             <p class="p_date">2017</p>
             <div class="vertical_line"></div>
@@ -368,6 +407,7 @@
             </div>
           </div>
           <div class="empty_div"></div>
+		  <!-- #6 -->
           <div class="div1">
             <p class="p_date">2017</p>
             <div class="vertical_line"></div>
@@ -376,6 +416,7 @@
             </div>
           </div>
           <div class="empty_div"></div>
+		  <!-- #7 -->
           <div class="div1">
             <p class="p_date">2016</p>
             <div class="vertical_line"></div>
@@ -384,6 +425,7 @@
             </div>
           </div>
           <div class="empty_div"></div>
+		  <!-- #8 -->
           <div class="div1">
             <p class="p_date">2016</p>
             <div class="vertical_line"></div>
@@ -392,6 +434,7 @@
             </div>
           </div>
           <div class="empty_div"></div>
+		  <!-- #8 -->
           <div class="div1">
             <p class="p_date">2015</p>
             <div class="vertical_line"></div>
@@ -400,6 +443,7 @@
             </div>
           </div>
           <div class="empty_div"></div>
+		  <!-- #9 -->
           <div class="div1">
             <p class="p_date">2015</p>
             <div class="vertical_line"></div>
@@ -408,6 +452,7 @@
             </div>
           </div>
           <div class="empty_div"></div>
+		  <!-- #10 -->
           <div class="div1">
             <p class="p_date">2014</p>
             <div class="vertical_line"></div>
