@@ -95,7 +95,7 @@ a {
   display: flex;
   width: 100%;
   height: 50px;
-  margin-top: 500px;
+  margin-top: 130px;
 }
 #navigation_panel ul{
   width: 100%;
@@ -162,33 +162,45 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+#part2_container_id{
+	margin: 0;
+	padding-right: 0;
+	height: 570px;
+}
 #part2_image_div{
-  width: 60%;
-  height: auto;
+  padding-top: 0;
+  width: 40%;
+  height: inherent;
   display: flex;
   flex-direction: column;
  }
 #part2_about_me{
-  font-size: 30pt;
+  font-size: 28pt;
   font-weight: bolder;
+  padding-left: 50px;
+  padding-top: 0;
+  padding-bottom: 5px;
 }
-
+#part2_image_div {
+	align: center;
+}
 #part2_image_div img{
   width: 90%;
   margin-left: 0;
+  align-self: center;
 }
 #part2_right_side{
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 40%;
+  width: 60%;
 }
 #part2_right_side span.bio{
-  font-size: 18pt;
+  font-size: 14pt;
   text-align: justify;
 }
 #part2_right_side span.bio_bordered{
-  font-size: 16pt;
+  font-size: 14pt;
   margin: 10px 0 0 10px;
   padding: 10px 0 0 10px;
   border-left: black solid medium;
