@@ -16,5 +16,15 @@ a.tooltip_link{
 	border-width: 2px;
 	border-style: solid;
 	border-radius: 8px;
-	
+}
+
+.tooltip_img_container{
+	self-align: center;
+	width: 100%;
+	align-content: center;
+}
+
+.tooltip_img_container img{
+	padding-right: 2px;
+	padding-left: 2px;
 }
