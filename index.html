@@ -92,6 +92,29 @@
 		$("#projects4_info").mouseleave(function(e){
 			$("#project4_tooltip").css("display", "none");
 		});
+		
+		$(".skill_progress").mouseenter(function(e){
+			var x = e.pageX,
+				y = e.pageY;
+			var wid = $(window).width()*0.2;
+			var exp = this.dataset.skillexp
+			var str = "";
+			if (exp>1){
+				str = "have " + exp + " years experience";
+			}else{
+				str = "have " + exp + " year experience";
+			}
+			
+			$("#skills_tooltip").css("display", "block");
+			$("#skills_tooltip").css("width", wid + "px");
+			$("#skills_tooltip").css("top", y-80 + "px");
+			$("#skills_tooltip").css("left", x-wid/2 + "px");
+			$("#skills_tooltip").get(0).innerHTML =  str;	
+		});
+		$(".skill_progress").mouseleave(function(e){
+			$("#skills_tooltip").css("display", "none");
+		});
+		
 	});
   </script>
   
@@ -104,6 +127,7 @@
 <div class="tooltip" id="project2_tooltip" width="400px" style="text-align: justify">Optimizing thermodynamical systems to properly save previously wasted energy has taken a great amount of attention since last decade. In this research, we have obtained mathematical equations which express energetic and exergetic efficiencies in terms of evaporator and generator temperatures for any reasonable working conditions, that is ambient, absorber, and condenser temperatures as well as effectiveness of heat exchanger. Having modeled an absorption cooling system (ACS) in MATLAB, I managed to use Genetic Algorithm to find the optimum evaporator and generator temperatures. Repeating the very optimization process, I have gathered a dataset of different working conditions and their optimum parameters. Using Group Method of Data Handling (GMDH) I have conducted a regression on available data and obtain mathematical equations which can be used in the process of designing ACSs. In the regression process, various structures have been considered for training the model with different activation function and hidden layer count. The first figure shows the schematics of ACS. The second one shows the structure of trained GMDH neural network, and the third one shows the result of sensitivity analysis on the model.<br/><div class="tooltip_img_container"><img src="projects2_tooltip_pic1.PNG" width="30%"/><img src="projects2_tooltip_pic2.PNG" width="30%"/><img src="projects2_tooltip_pic3.PNG" width="30%"/></div></div>
 <div class="tooltip" id="project3_tooltip" width="400px" style="text-align: justify">Harnessing the solar rays shining on residential building makes us capable of controlling the environment temperature in both cold and hot seasons. In this project, I, as a member of a 2-student team, have modeled a solar shutter that would be installed in front of windows in buildings as shown in figures below. Using geometrical principals and MATLAB software, I managed to obtained the optimal curve for the shutter which can most efficiently reflect the solar beams on a central tube filled with special phase changing material. After the optimum design had obtained and CAD model had been designed in Solidworks software, I analyzed the thermal performance of the shutter using ANSYS. Below, you can see some of the outputs for this project.<br/><div class="tooltip_img_container"><img src="projects3_tooltip_pic1.PNG" width="24%"/><img src="projects3_tooltip_pic2.PNG" width="24%"/><img src="projects3_tooltip_pic3.PNG" width="24%"/><img src="projects3_tooltip_pic4.PNG" width="24%"/></div></div>
 <div class="tooltip" id="project4_tooltip" width="400px" style="text-align: justify">In this experimental project, which was Smart Material's course, using a fuzzy neural network, I have conducted some experiences to identify and model the SMA wires. Then, I have used this wire to control the angle of a morphing-wing mechanism shown in figure below. During this project, I learned to use Simulink to model SMA wires theorically. In addition, I learned to model the system in LabView environment to test my controller on the mechanism in the real time using a DAQ hardware.<br/><div class="tooltip_img_container"><img src="projects4_tooltip_pic1.PNG" width="24%"/><img src="projects4_tooltip_pic2.PNG" width="24%"/><img src="projects4_tooltip_pic3.PNG" width="24%"/><img src="projects4_tooltip_pic4.PNG" width="24%"/></div></div>
+<div class="tooltip" id="skills_tooltip" width="200px"></div>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <!-- end of tooltips -->
@@ -282,11 +306,30 @@
       <div class="part_container">
         <div class="part_title"  id="academic">Academic Experience</div>
         <div class="give_info">
+		  <div class="div1">
+            <p class="p_date">2019 - now</p>
+            <div class="vertical_line"></div>
+            <div class="p_info">
+              <p class="edu_p1 work_p1">Reviewer of Energy Conversion and Management (ECM) Journal</p>
+            </div>
+          </div>
+          <div class="empty_div"></div>
+		  
+		  <div class="div1">
+            <p class="p_date">2016 - now</p>
+            <div class="vertical_line"></div>
+            <div class="p_info">
+              <p class="edu_p1 work_p1">Founding member of the Association of Iranian Young Engineers</p>
+              <p class="edu_p2 work_p2">Tabriz, Iran</p>
+            </div>
+          </div>
+          <div class="empty_div"></div>
+		  
           <div class="div1">
             <p class="p_date">2016 - now</p>
             <div class="vertical_line"></div>
             <div class="p_info">
-              <p class="edu_p1 work_p1">Member of Noise, Acoustics, and Vibrations Research Center</p>
+              <p class="edu_p1 work_p1">Research assistant in Noise, Acoustics, and Vibrations Research Center</p>
               <p class="edu_p2 work_p2">University of Tehran</p>
             </div>
           </div>
@@ -303,7 +346,7 @@
           <div class="empty_div"></div>
 
           <div class="div1">
-            <p class="p_date">2013 - now</p>
+            <p class="p_date">2014 - now</p>
             <div class="vertical_line"></div>
             <div class="p_info">
               <p class="edu_p1 work_p1">CATIA Software Instructor</p>
@@ -332,21 +375,21 @@
           </div>
           <div class="empty_div"></div>
 
+		  <div class="div1">
+            <p class="p_date">2016</p>
+            <div class="vertical_line"></div>
+            <div class="p_info">
+              <p class="edu_p1 work_p1">Teaching Assistant of Robotics course</p>
+              <p class="edu_p2 work_p2">University of Tabriz (undergraduate course)</p>
+            </div>
+          </div>
+          <div class="empty_div"></div>
+		  
           <div class="div1">
             <p class="p_date">2015</p>
             <div class="vertical_line"></div>
             <div class="p_info">
               <p class="edu_p1 work_p1">Teaching Assistant of Computer Programming course</p>
-              <p class="edu_p2 work_p2">University of Tabriz (undergraduate course)</p>
-            </div>
-          </div>
-          <div class="empty_div"></div>
-
-          <div class="div1">
-            <p class="p_date">2015</p>
-            <div class="vertical_line"></div>
-            <div class="p_info">
-              <p class="edu_p1 work_p1">Teaching Assistant of Robotics course</p>
               <p class="edu_p2 work_p2">University of Tabriz (undergraduate course)</p>
             </div>
           </div>
@@ -371,7 +414,7 @@
         <div class="part_title" id="work">Work Experience</div>
         <div class="give_info">
           <div class="div1">
-            <p class="p_date">2013 - 2016</p>
+            <p class="p_date">2013 - now</p>
             <div class="vertical_line"></div>
             <div class="p_info">
               <p class="edu_p1 work_p1">Non-Destructive Weld Test Inspector</p>
@@ -380,7 +423,7 @@
           </div>
           <div class="empty_div"></div>
           <div class="div1">
-            <p class="p_date">2012 - 2013</p>
+            <p class="p_date">2012 - 2014</p>
             <div class="vertical_line"></div>
             <div class="p_info">
               <p class="edu_p1 work_p1">Designer and Modeler of Industrial components using CAD software</p>
@@ -507,97 +550,97 @@
         <div class="give_info_skill">
           <div class="div2">
             <p class="p_software">ICDL</p>
-            <div class="skill_progress">
+            <div class="skill_progress" data-skillexp="13">
               <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/>
             </div>
           </div>
 
           <div class="div2">
             <p class="p_software">MATLAB</p>
-            <div class="skill_progress">
+            <div class="skill_progress" data-skillexp="6">
               <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/>
             </div>
           </div>
 
           <div class="div2">
             <p class="p_software">C / C++</p>
-            <div class="skill_progress">
+            <div class="skill_progress" data-skillexp="10">
                 <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_xali.JPG"/>
             </div>
           </div>
 
           <div class="div2">
             <p class="p_software">Ardiuno</p>
-            <div class="skill_progress">
+            <div class="skill_progress" data-skillexp="5">
                 <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/>
             </div>
           </div>
 
           <div class="div2">
             <p class="p_software">Java</p>
-            <div class="skill_progress">
+            <div class="skill_progress" data-skillexp="3">
                 <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/>
             </div>
           </div>
 
             <div class="div2">
                 <p class="p_software" style="font-size: 14pt;">Android programming</p>
-                <div class="skill_progress">
+                <div class="skill_progress" data-skillexp="3">
                     <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/>
                 </div>
             </div>
 
             <div class="div2">
                 <p class="p_software">Python</p>
-                <div class="skill_progress">
+                <div class="skill_progress" data-skillexp="3">
                     <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/>
                 </div>
             </div>
 
             <div class="div2">
                 <p class="p_software">EES</p>
-                <div class="skill_progress">
+                <div class="skill_progress" data-skillexp="6">
                     <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/>
                 </div>
             </div>
 
             <div class="div2">
                 <p class="p_software">Aspen</p>
-                <div class="skill_progress">
+                <div class="skill_progress" data-skillexp="1">
                     <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/>
                 </div>
             </div>
 
             <div class="div2">
-                <p class="p_software">Fortran</p>
-                <div class="skill_progress">
+                <p class="p_software" >Fortran</p>
+                <div class="skill_progress" data-skillexp="6">
                     <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_xali.JPG"/>
                 </div>
             </div>
 
             <div class="div2">
                 <p class="p_software">LAMMPS</p>
-                <div class="skill_progress">
+                <div class="skill_progress" data-skillexp="3">
                     <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_xali.JPG"/>
                 </div>
             </div>
 
             <div class="div2">
                 <p class="p_software">Catia</p>
+                <div class="skill_progress" data-skillexp="6">
+                    <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/>
+                </div>
+            </div>
+
+            <div class="div2">
+                <p class="p_software" data-skillexp="6">Solidworks</p>
                 <div class="skill_progress">
                     <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/>
                 </div>
             </div>
 
             <div class="div2">
-                <p class="p_software">Solidworks</p>
-                <div class="skill_progress">
-                    <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/>
-                </div>
-            </div>
-
-            <div class="div2">
-                <p class="p_software">Autocad</p>
+                <p class="p_software" data-skillexp="4">Autocad</p>
                 <div class="skill_progress">
                     <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/><img src="sq_xali.JPG"/>
                 </div>
@@ -611,21 +654,21 @@
             </div>
 
             <div class="div2">
-                <p class="p_software">FEM Modeling</p>
+                <p class="p_software" data-skillexp="6">FEM Modeling</p>
                 <div class="skill_progress">
                     <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_xali.JPG"/>
                 </div>
             </div>
 
             <div class="div2">
-                <p class="p_software" style="font-size: 14pt;">Data Classification</p>
+                <p class="p_software" style="font-size: 14pt;" data-skillexp="3">Data Classification</p>
                 <div class="skill_progress">
                     <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_xali.JPG"/>
                 </div>
             </div>
 
             <div class="div2">
-                <p class="p_software">Neural Networks</p>
+                <p class="p_software" data-skillexp="3">Neural Networks</p>
                 <div class="skill_progress">
                     <img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_por.JPG"/><img src="sq_xali.JPG"/>
                 </div>
