@@ -381,3 +381,7 @@ a {
 #myBtn:hover {
   background-color: #555;
 }
+.p_certificate{
+	font-size: 22pt;
+	text-align: justify;
+}
