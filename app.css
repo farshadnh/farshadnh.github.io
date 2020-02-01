@@ -383,5 +383,19 @@ a {
 }
 .p_certificate{
 	font-size: 22pt;
-	text-align: justify;
+	text-align: left;
+    margin-left: .1in;
+}
+.p_certificate a{
+	text-decoration: none;
+	color: black;
+}
+.span_certificate_sub{
+	font-size: 16pt;
+	text-align: left;
+	margin-left: .4in;
+}
+.span_certificate_sub a{
+	text-decoration: none;
+	color: black;
 }
